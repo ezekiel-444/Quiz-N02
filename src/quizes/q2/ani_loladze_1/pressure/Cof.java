@@ -6,19 +6,18 @@ public class CoffeeShop {
         int pricePerCoffee = 250; // tetri
         int numCoffeeSold = 100;
         int totalCostOfBeans = 15000; // tetri
-        int totalExpenses;
+        int totalExpenses = 5900 + 84 + 407 + 148 + 8100; // Total expenses in tetri
 
-        // TODO 1
-        // include all the expenses that are provided in the expenses.txt file
-
-        double profit = calculateProfit(pricePerCoffee, numCoffeeSold, totalCostOfBeans, otherExpenses);
+        double profit = calculateProfit(pricePerCoffee, numCoffeeSold, totalCostOfBeans, totalExpenses);
+        System.out.println("Profit in laris: " + profit);
     }
 
     public static double calculateProfit(int pricePerCoffee, int numCoffeeSold, int totalCostOfBeans, int otherExpenses) {
+        int totalRevenue = pricePerCoffee * numCoffeeSold;
+        double totalCost = totalCostOfBeans + (otherExpenses / 100.0); // Convert other expenses to laris
 
-        // TODO 2
-        // Finish this function
+        double profitInTetri = totalRevenue - totalCost;
 
-        return profitInLaris;
+        return profitInTetri / 100.0;
     }
 }
